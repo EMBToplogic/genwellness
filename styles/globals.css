@@ -1,16 +1,53 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    overflow-x: hidden;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+:root {
+    --none: none;
+    --primary: #C51F1B;
+    --secondary: #A71436;
+    --tertiary: #841312;
+    --orange: #F06249;
+    --grey: #D5D5D5;
+    --black: #505C72;
+    --primary-gradient: linear-gradient(180deg, #F15652 0%, #C51F1B 100%);
+    --secondary-gradient: linear-gradient(180deg, #FE8873 0%, #F06249 100%);
+    --tertiary-gradient: linear-gradient(180deg, #C14443 0%, #841312 100%);
+    --quaternary-gradient: linear-gradient(180deg, #CC3C5E 0%, #A71436 100%);
+    --nav-gradient: linear-gradient(180deg, #C51F1B 0%, #A71436 100%);
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 25px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
 }
