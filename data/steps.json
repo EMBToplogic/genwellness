@@ -1,0 +1,36 @@
+[{
+        "stepType": 1,
+        "stepNo": 1,
+        "description": "You can access GenWellness by tapping the GenWellness button located at the lower right hand side of the dashboard."
+    },
+    {
+        "stepType": 1,
+        "stepNo": 2,
+        "description": "Tap the 'Challenges' button to see a list of all active challenges for you."
+    },
+    {
+        "stepType": 2,
+        "stepNo": 1,
+        "description": "From GenWellness' main screen, tap the 'Challenges' button to see an extensive list of individual and group challenges."
+    },
+    {
+        "stepType": 2,
+        "stepNo": 2,
+        "description": "Tap the 'Group' button to sort challenges by group."
+    },
+    {
+        "stepType": 3,
+        "stepNo": 1,
+        "description": "Tap a specific Available Challenge within the Challenges screen to get started."
+    },
+    {
+        "stepType": 3,
+        "stepNo": 2,
+        "description": "Simply select a team by tapping one of the team buttons located at the bottom."
+    },
+    {
+        "stepType": 3,
+        "stepNo": 3,
+        "description": "Tap the 'Join' button to join your selected challenge. Additionally, you may add your preferred fitness trackers by tapping 'Tracker Settings'"
+    }
+]

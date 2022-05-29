@@ -1,0 +1,60 @@
+.container {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    padding: 0% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../public/images/img_mechanics_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title {
+    color: #fff;
+    margin: 5% 0%;
+    font-size: 40px;
+}
+
+.table {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    overflow-y: scroll;
+    background-color: #fff;
+    padding: 5% 0%;
+}
+
+.card {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 1% 0%;
+    box-shadow: 0px 10px 20px #84141236;
+    display: flex;
+    flex-direction: row;
+}
+
+.card_index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-gradient);
+    width: 10%;
+    border-radius: 10px 0px 0px 10px;
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.card_description {
+    width: 90%;
+    padding: 5%;
+    color: var(--orange);
+}
