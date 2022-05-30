@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 // CSS
 
@@ -16,39 +17,47 @@ const Nav = () => {
         <Image src={Logo} alt='generali-logo' />
       </div>
       <ul className={navStyles.main_ul}>
-        <li className={navStyles.main_ul_li}>
+        <motion.li whileHover={hoverAnim} className={navStyles.main_ul_li}>
           <Link href='#hero' scroll={false}>
             Home
           </Link>
-        </li>
-        <li className={navStyles.main_ul_li}>
+        </motion.li>
+        <motion.li whileHover={hoverAnim} className={navStyles.main_ul_li}>
           <Link href='#ongoing' scroll={false}>
             Ongoing
           </Link>
-        </li>
-        <li className={navStyles.main_ul_li}>
+        </motion.li>
+        <motion.li whileHover={hoverAnim} className={navStyles.main_ul_li}>
           <Link href='#join' scroll={false}>
             Join
           </Link>
-        </li>
-        <li className={navStyles.main_ul_li}>
+        </motion.li>
+        <motion.li whileHover={hoverAnim} className={navStyles.main_ul_li}>
           <Link href='#mechanics' scroll={false}>
             Mechanics
           </Link>
-        </li>
-        <li className={navStyles.main_ul_li}>
+        </motion.li>
+        <motion.li whileHover={hoverAnim} className={navStyles.main_ul_li}>
           <Link href='#how-to' scroll={false}>
             How To's
           </Link>
-        </li>
-        <li className={navStyles.main_ul_li}>
+        </motion.li>
+        <motion.li whileHover={hoverAnim} className={navStyles.main_ul_li}>
           <Link href='#challenges' scroll={false}>
             Challenges
           </Link>
-        </li>
+        </motion.li>
       </ul>
     </div>
   );
+};
+
+const hoverAnim = {
+  scale: 1.2,
+  transition: {
+    ease: [0.6, 0.01, -0.05, 0.95],
+    duration: 0.5,
+  },
 };
 
 export default Nav;

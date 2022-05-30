@@ -9,30 +9,51 @@ import { ArrowRight } from "react-feather";
 
 import collapsibleStyles from "../styles/Collapsible.module.css";
 
-const Collapsible = ({ step, index }) => {
+const Collapsible = ({
+  step,
+  index,
+  activeChallenge,
+  setActiveChallenge,
+  setActiveImage,
+}) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const handleClick = (isCollapsed) => {
+    if (isCollapsed) {
+      if (activeChallenge !== index) {
+        setActiveChallenge(index);
+        setIsCollapsed(true);
+      } else {
+        setActiveChallenge(0);
+        setIsCollapsed(false);
+      }
+    } else {
+      setActiveChallenge(index);
+      setIsCollapsed(true);
+    }
+  };
 
   return (
     <motion.div
       className={collapsibleStyles.collapsible}
       onClick={() => {
-        setIsCollapsed(!isCollapsed);
+        handleClick(isCollapsed);
       }}
       variants={collapsibleVariants}
       initial='initial'
-      animate={isCollapsed ? "animate" : "initial"}
+      animate={activeChallenge === index ? "animate" : "initial"}
       key={step.stepNo}
     >
       <div className={collapsibleStyles.collapsible_textbox}>
         <h3 className={collapsibleStyles.collapsible_title}>
           Step {step.stepNo}
         </h3>
-        {isCollapsed && (
+        {activeChallenge === index && (
           <motion.span
             className={collapsibleStyles.collapsible_desc}
             variants={descriptionVariants}
             initial='initial'
-            animate={isCollapsed ? "animate" : "initial"}
+            animate={activeChallenge === index ? "animate" : "initial"}
           >
             {step.description}
           </motion.span>
@@ -42,7 +63,7 @@ const Collapsible = ({ step, index }) => {
         <motion.div
           variants={arrowVariants}
           initial='initial'
-          animate={isCollapsed ? "animate" : "initial"}
+          animate={activeChallenge === index ? "animate" : "initial"}
         >
           <ArrowRight />
         </motion.div>

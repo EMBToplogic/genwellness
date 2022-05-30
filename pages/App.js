@@ -14,6 +14,7 @@ import Modal from "../components/Modal";
 
 // CSS
 import styles from "../styles/Home.module.css";
+import Footer from "../components/Footer";
 
 export default function Home({ challenges }) {
   const [activeChallenge, setActiveChallenge] = useState(challenges.data[0]);
@@ -40,6 +41,7 @@ export default function Home({ challenges }) {
           challenges={challenges}
           setActiveChallenge={setActiveChallenge}
         />
+        <Footer />
       </div>
     </>
   );

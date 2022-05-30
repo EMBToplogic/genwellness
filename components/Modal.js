@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 // Data
 
@@ -13,12 +14,26 @@ import Collapsible from "./Collapsible";
 
 import { XCircle } from "react-feather";
 
+// Images
+
+import step_1_1 from "../public/images/how-tos/step-1-1.png";
+import step_1_2 from "../public/images/how-tos/step-1-2.png";
+
+import step_2_1 from "../public/images/how-tos/step-2-1.png";
+import step_2_2 from "../public/images/how-tos/step-2-2.png";
+
+import step_3_1 from "../public/images/how-tos/step-3-1.png";
+import step_3_2 from "../public/images/how-tos/step-3-2.png";
+import step_3_3 from "../public/images/how-tos/step-3-3.png";
+
 // CSS
 
 import modalStyles from "../styles/Modal.module.css";
 
 const Modal = ({ isModalOpen, setIsModalOpen, modalType }) => {
   const [modalTitle, setModalTitle] = useState("");
+  const [activeChallenge, setActiveChallenge] = useState(0);
+  const [activeImage, setActiveImage] = useState("");
 
   const filteredSteps = steps.filter((stepRes) => {
     if (stepRes.stepType === modalType) {
@@ -27,6 +42,49 @@ const Modal = ({ isModalOpen, setIsModalOpen, modalType }) => {
       return;
     }
   });
+
+  const handleImage = (modalType, activeImage) => {
+    if (activeChallenge > 0) {
+      switch (modalType) {
+        case 1:
+          switch (activeChallenge) {
+            case 1:
+              setActiveImage(step_1_1);
+              break;
+            case 2:
+              setActiveImage(step_1_2);
+              break;
+          }
+          break;
+        case 2:
+          switch (activeChallenge) {
+            case 1:
+              setActiveImage(step_2_1);
+              break;
+            case 2:
+              setActiveImage(step_2_2);
+              break;
+          }
+          break;
+        default:
+          switch (activeChallenge) {
+            case 1:
+              setActiveImage(step_3_1);
+              break;
+            case 2:
+              setActiveImage(step_3_2);
+              break;
+            case 3:
+              setActiveImage(step_3_3);
+              break;
+          }
+      }
+    }
+  };
+
+  useEffect(() => {
+    handleImage(modalType, activeChallenge);
+  }, [activeChallenge]);
 
   useEffect(() => {
     switch (modalType) {
@@ -98,6 +156,17 @@ const Modal = ({ isModalOpen, setIsModalOpen, modalType }) => {
     },
   };
 
+  const imageVariants = {
+    initial: {
+      opacity: 0,
+      scale: 0.8,
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+    },
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -127,10 +196,40 @@ const Modal = ({ isModalOpen, setIsModalOpen, modalType }) => {
           <div className={modalStyles.modal_content}>
             <div className={modalStyles.table}>
               {filteredSteps.map((step, index) => {
-                return <Collapsible step={step} index={index + 1} />;
+                return (
+                  <Collapsible
+                    step={step}
+                    index={index + 1}
+                    activeChallenge={activeChallenge}
+                    setActiveChallenge={setActiveChallenge}
+                    key={index}
+                  />
+                );
               })}
             </div>
-            <div className={modalStyles.image_container}></div>
+            <div className={modalStyles.image_container}>
+              {activeImage && activeChallenge > 0 && (
+                <Image
+                  className={modalStyles.image_active}
+                  src={activeImage}
+                  layout={"intrinsic"}
+                  objectFit={"contain"}
+                  placeholder='blur'
+                  key={activeImage}
+                />
+              )}
+              {activeChallenge === 0 && (
+                <>
+                  <span
+                    style={{
+                      color: "var(--black)",
+                    }}
+                  >
+                    Select a step to get started.
+                  </span>
+                </>
+              )}
+            </div>
           </div>
         </motion.div>
       </motion.div>

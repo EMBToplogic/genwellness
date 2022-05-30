@@ -26,7 +26,7 @@ const hoverAnim = {
 
 const HowTos = ({ setIsModalOpen, setModalType }) => {
   return (
-    <div className={howToStyles.container}>
+    <div className={howToStyles.container} id='how-to'>
       <div className={howToStyles.title}>How To's</div>
       <div className={howToStyles.table}>
         <div className={howToStyles.card}>
