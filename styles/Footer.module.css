@@ -1,18 +1,90 @@
-.container {
-    height: 100px;
-    width: 100%;
-    padding: 0% 5%;
-    background-color: var(--secondary);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+/* Mobile */
+
+@media screen and (max-width: 480px) {
+    .container {
+        height: 70px;
+        width: 100%;
+        padding: 0% 5%;
+        background-color: var(--orange);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer_description {
+        font-size: .3em;
+        color: #fff;
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+    }
 }
 
-.footer_description {
-    font-size: .5em;
-    color: #fff;
-    width: 30%;
-    text-align: center;
-    margin: 0 auto;
+
+/* Tablet */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .container {
+        height: 100px;
+        width: 100%;
+        padding: 0% 5%;
+        background-color: var(--secondary);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer_description {
+        font-size: .5em;
+        color: #fff;
+        width: 30%;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+
+/* Laptop */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        height: 100px;
+        width: 100%;
+        padding: 0% 5%;
+        background-color: var(--secondary);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer_description {
+        font-size: .5em;
+        color: #fff;
+        width: 30%;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+    .container {
+        height: 100px;
+        width: 100%;
+        padding: 0% 5%;
+        background-color: var(--secondary);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer_description {
+        font-size: .5em;
+        color: #fff;
+        width: 30%;
+        text-align: center;
+        margin: 0 auto;
+    }
 }

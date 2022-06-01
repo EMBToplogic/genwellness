@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 import Ongoing from "../components/Ongoing";
 import Join from "../components/Join";
 import Mechanics from "../components/Mechanics";
-import Challenges from "../components/Challenges";
 import Meta from "../components/Meta";
 import HowTos from "../components/HowTos";
 import Modal from "../components/Modal";
@@ -14,11 +13,19 @@ import Modal from "../components/Modal";
 // Dynamic Components
 
 const Nav = dynamic(() => import("../components/Nav"), { ssr: false });
+
 const Hero = dynamic(() => import("../components/Hero"), { ssr: false });
+
+const Challenges = dynamic(() => import("../components/Challenges"), {
+  ssr: false,
+});
+
+const Footer = dynamic(() => import("../components/Footer"), {
+  ssr: false,
+});
 
 // CSS
 import styles from "../styles/Home.module.css";
-import Footer from "../components/Footer";
 
 export default function Home({ challenges }) {
   const [activeChallenge, setActiveChallenge] = useState(challenges.data[0]);

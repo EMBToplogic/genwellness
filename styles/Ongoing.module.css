@@ -10,7 +10,6 @@
         padding: 5%;
         justify-content: center;
         background-image: cover;
-        height: 70vh;
     }
     .bg_container {
         position: absolute;
@@ -52,6 +51,7 @@
         font-size: .6em;
     }
     .challenge_title {
+        text-align: center;
         font-size: 1.5em;
     }
 }
@@ -61,7 +61,6 @@
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .container {
-        height: 100vh;
         width: 100vw;
         position: relative;
         background: #a71436bf;
@@ -73,7 +72,6 @@
         background-image: cover;
     }
     .bg_container {
-        height: 100vh;
         width: 100vw;
         position: absolute;
         transform: translate(-50%, -50%);
@@ -110,6 +108,9 @@
     }
     .challenge_desc {
         width: 60%;
+        text-align: center;
+    }
+    .challenge_title {
         text-align: center;
     }
 }
@@ -119,7 +120,6 @@
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .container {
-        height: 100vh;
         width: 100vw;
         position: relative;
         background: #a71436bf;
@@ -131,7 +131,6 @@
         background-image: cover;
     }
     .bg_container {
-        height: 100vh;
         width: 100vw;
         position: absolute;
         transform: translate(-50%, -50%);
@@ -170,6 +169,9 @@
         width: 60%;
         text-align: center;
     }
+    .challenge_title {
+        text-align: center;
+    }
 }
 
 
@@ -177,7 +179,6 @@
 
 @media screen and (min-width: 1024px) {
     .container {
-        height: 100vh;
         width: 100vw;
         position: relative;
         background: #a71436bf;
@@ -189,7 +190,6 @@
         background-image: cover;
     }
     .bg_container {
-        height: 100vh;
         width: 100vw;
         position: absolute;
         transform: translate(-50%, -50%);
@@ -226,6 +226,9 @@
     }
     .challenge_desc {
         width: 60%;
+        text-align: center;
+    }
+    .challenge_title {
         text-align: center;
     }
 }

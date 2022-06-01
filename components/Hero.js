@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { isMobile } from "react-device-detect";
 
 // Hooks
+
 import useWindowSize from "../hooks/useWindowSize";
 
 // CSS

@@ -1,5 +1,11 @@
 import dayjs from "dayjs";
 import Link from "next/link";
+import { useEffect } from "react";
+import { isMobile } from "react-device-detect";
+
+// Hooks
+
+import useWindowSize from "../hooks/useWindowSize";
 
 // CSS
 
@@ -8,8 +14,21 @@ import challengesStyles from "../styles/Challenges.module.css";
 const bgStyles = ["var(--primary-gradient)", "var(--secondary-gradient)"];
 
 const Challenges = ({ challenges, setActiveChallenge }) => {
+  const [height, width] = useWindowSize();
+
+  useEffect(() => {
+    if (!isMobile) {
+      window.addEventListener("resize", (e) => {
+        width = e.currentTarget.innerWidth;
+      });
+    }
+  }, []);
   return (
-    <div className={challengesStyles.container} id='challenges'>
+    <div
+      className={challengesStyles.container}
+      id='challenges'
+      style={{ height: height / 1.5, width: width }}
+    >
       <div className={challengesStyles.title}>Other Challenges</div>
       <div className={challengesStyles.table}>
         {challenges.data.map((challenge, index) => {
