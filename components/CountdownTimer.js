@@ -78,7 +78,7 @@ const CountdownTimer = ({ challengeDate, countdownTimestampMs }) => {
             {remainingTime.days}
           </motion.span>
         </AnimatePresence>
-        <span>Days</span>
+        <span className={countdownStyles.time_spec}>Days</span>
       </div>
       <div>:</div>
       <div className={countdownStyles.timer_card}>
@@ -94,7 +94,7 @@ const CountdownTimer = ({ challengeDate, countdownTimestampMs }) => {
             {remainingTime.hours}
           </motion.span>
         </AnimatePresence>
-        <span>Hours</span>
+        <span className={countdownStyles.time_spec}>Hours</span>
       </div>
       <div>:</div>
       <div className={countdownStyles.timer_card}>
@@ -110,7 +110,7 @@ const CountdownTimer = ({ challengeDate, countdownTimestampMs }) => {
             {remainingTime.minutes}
           </motion.span>
         </AnimatePresence>
-        <span>Minutes</span>
+        <span className={countdownStyles.time_spec}>Minutes</span>
       </div>
       <div>:</div>
       <div className={countdownStyles.timer_card}>
@@ -126,7 +126,7 @@ const CountdownTimer = ({ challengeDate, countdownTimestampMs }) => {
             {remainingTime.seconds}
           </motion.span>
         </AnimatePresence>
-        <span>Seconds</span>
+        <span className={countdownStyles.time_spec}>Seconds</span>
       </div>
     </div>
   );

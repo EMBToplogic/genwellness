@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { isMobile } from "react-device-detect";
 
 // Hooks
 import useWindowSize from "../hooks/useWindowSize";
@@ -23,14 +24,16 @@ const Nav = () => {
   const [height, width] = useWindowSize();
 
   useEffect(() => {
-    window.addEventListener("resize", (e) => {
-      width = e.currentTarget.innerWidth;
-      height = e.currentTarget.innerHeight;
+    if (!isMobile) {
+      window.addEventListener("resize", (e) => {
+        width = e.currentTarget.innerWidth;
+        height = e.currentTarget.innerHeight;
 
-      if (width > 480) {
-        setIsNavOpen(false);
-      }
-    });
+        if (width > 480) {
+          setIsNavOpen(false);
+        }
+      });
+    }
   }, []);
 
   return (
@@ -78,7 +81,7 @@ const Nav = () => {
                       setIsNavOpen(false);
                     }}
                   >
-                    <Link href='#hero' scroll={false}>
+                    <Link href='#home' scroll={false}>
                       Home
                     </Link>
                   </motion.li>
@@ -146,7 +149,7 @@ const Nav = () => {
       {width > 480 && (
         <ul className={navStyles.main_ul}>
           <motion.li whileHover={hoverAnim} className={navStyles.main_ul_li}>
-            <Link href='#hero' scroll={false}>
+            <Link href='#home' scroll={false}>
               Home
             </Link>
           </motion.li>

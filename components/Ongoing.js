@@ -34,6 +34,8 @@ const Ongoing = ({ activeChallenge }) => {
           className={ongoingStyles.bg_container}
           style={{
             backgroundImage: `url("${activeChallenge.image}")`,
+            height: "100%",
+            width: "100%",
           }}
         ></div>
       </div>

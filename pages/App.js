@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 
 // Components
 
-import Hero from "../components/Hero";
 import Ongoing from "../components/Ongoing";
 import Join from "../components/Join";
 import Mechanics from "../components/Mechanics";
@@ -15,6 +14,7 @@ import Modal from "../components/Modal";
 // Dynamic Components
 
 const Nav = dynamic(() => import("../components/Nav"), { ssr: false });
+const Hero = dynamic(() => import("../components/Hero"), { ssr: false });
 
 // CSS
 import styles from "../styles/Home.module.css";
